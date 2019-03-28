@@ -7,6 +7,8 @@
 //
 
 #include <iostream>
+#include <SpectrographGen.hpp>
+#include <SFML/Audio.hpp>
 
 int main(int argc, const char * argv[]) {
     // insert code here...

@@ -8,23 +8,90 @@
 
 /* Begin PBXBuildFile section */
 		6BC9C1D3224C679B00D473B7 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6BC9C1D2224C679400D473B7 /* main.cpp */; };
+		6BC9C1DF224C6B7600D473B7 /* SpectrographGen.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6BC9C1DD224C6B7600D473B7 /* SpectrographGen.cpp */; };
+		6BC9C1E0224C6B7600D473B7 /* SpectrographGen.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 6BC9C1DE224C6B7600D473B7 /* SpectrographGen.hpp */; };
+		6BC9C1E4224C6B8B00D473B7 /* libLibSpectrographCPP.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BC9C1D8224C6B4300D473B7 /* libLibSpectrographCPP.a */; };
+		6BC9C271224C6BB000D473B7 /* ogg.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BC9C265224C6BB000D473B7 /* ogg.framework */; };
+		6BC9C272224C6BB000D473B7 /* sfml-system.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BC9C266224C6BB000D473B7 /* sfml-system.framework */; };
+		6BC9C273224C6BB000D473B7 /* freetype.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BC9C267224C6BB000D473B7 /* freetype.framework */; };
+		6BC9C274224C6BB000D473B7 /* vorbis.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BC9C268224C6BB000D473B7 /* vorbis.framework */; };
+		6BC9C275224C6BB000D473B7 /* FLAC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BC9C269224C6BB000D473B7 /* FLAC.framework */; };
+		6BC9C276224C6BB000D473B7 /* sfml-audio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BC9C26A224C6BB000D473B7 /* sfml-audio.framework */; };
+		6BC9C277224C6BB000D473B7 /* sfml-network.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BC9C26B224C6BB000D473B7 /* sfml-network.framework */; };
+		6BC9C278224C6BB000D473B7 /* vorbisfile.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BC9C26C224C6BB000D473B7 /* vorbisfile.framework */; };
+		6BC9C279224C6BB000D473B7 /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BC9C26D224C6BB000D473B7 /* OpenAL.framework */; };
+		6BC9C27A224C6BB000D473B7 /* vorbisenc.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BC9C26E224C6BB000D473B7 /* vorbisenc.framework */; };
+		6BC9C27B224C6BB000D473B7 /* sfml-window.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BC9C26F224C6BB000D473B7 /* sfml-window.framework */; };
+		6BC9C27C224C6BB000D473B7 /* sfml-graphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BC9C270224C6BB000D473B7 /* sfml-graphics.framework */; };
+		6BC9C27D224C6BB400D473B7 /* FLAC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BC9C269224C6BB000D473B7 /* FLAC.framework */; };
+		6BC9C27E224C6BB400D473B7 /* freetype.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BC9C267224C6BB000D473B7 /* freetype.framework */; };
+		6BC9C27F224C6BB400D473B7 /* ogg.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BC9C265224C6BB000D473B7 /* ogg.framework */; };
+		6BC9C280224C6BB400D473B7 /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BC9C26D224C6BB000D473B7 /* OpenAL.framework */; };
+		6BC9C281224C6BB400D473B7 /* sfml-audio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BC9C26A224C6BB000D473B7 /* sfml-audio.framework */; };
+		6BC9C284224C6BB400D473B7 /* sfml-system.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BC9C266224C6BB000D473B7 /* sfml-system.framework */; };
+		6BC9C286224C6BB400D473B7 /* vorbis.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BC9C268224C6BB000D473B7 /* vorbis.framework */; };
+		6BC9C287224C6BB400D473B7 /* vorbisenc.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BC9C26E224C6BB000D473B7 /* vorbisenc.framework */; };
+		6BC9C288224C6BB400D473B7 /* vorbisfile.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BC9C26C224C6BB000D473B7 /* vorbisfile.framework */; };
+		6BC9C295224C6BF300D473B7 /* FLAC.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 6BC9C269224C6BB000D473B7 /* FLAC.framework */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		6BC9C296224C6BF300D473B7 /* freetype.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 6BC9C267224C6BB000D473B7 /* freetype.framework */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		6BC9C297224C6BF300D473B7 /* ogg.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 6BC9C265224C6BB000D473B7 /* ogg.framework */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		6BC9C298224C6BF300D473B7 /* OpenAL.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 6BC9C26D224C6BB000D473B7 /* OpenAL.framework */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		6BC9C299224C6BF300D473B7 /* sfml-audio.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 6BC9C26A224C6BB000D473B7 /* sfml-audio.framework */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		6BC9C29C224C6BF300D473B7 /* sfml-system.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 6BC9C266224C6BB000D473B7 /* sfml-system.framework */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		6BC9C29E224C6BF300D473B7 /* vorbis.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 6BC9C268224C6BB000D473B7 /* vorbis.framework */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		6BC9C29F224C6BF300D473B7 /* vorbisenc.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 6BC9C26E224C6BB000D473B7 /* vorbisenc.framework */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		6BC9C2A0224C6BF300D473B7 /* vorbisfile.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 6BC9C26C224C6BB000D473B7 /* vorbisfile.framework */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		6BC9C1E1224C6B8200D473B7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6BC9C1BE224C663100D473B7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6BC9C1D7224C6B4300D473B7;
+			remoteInfo = LibSpectrographCPP;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		6BC9C1C4224C663100D473B7 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = /usr/share/man/man1/;
-			dstSubfolderSpec = 0;
+			buildActionMask = 12;
+			dstPath = "";
+			dstSubfolderSpec = 10;
 			files = (
+				6BC9C295224C6BF300D473B7 /* FLAC.framework in CopyFiles */,
+				6BC9C296224C6BF300D473B7 /* freetype.framework in CopyFiles */,
+				6BC9C297224C6BF300D473B7 /* ogg.framework in CopyFiles */,
+				6BC9C298224C6BF300D473B7 /* OpenAL.framework in CopyFiles */,
+				6BC9C299224C6BF300D473B7 /* sfml-audio.framework in CopyFiles */,
+				6BC9C29C224C6BF300D473B7 /* sfml-system.framework in CopyFiles */,
+				6BC9C29E224C6BF300D473B7 /* vorbis.framework in CopyFiles */,
+				6BC9C29F224C6BF300D473B7 /* vorbisenc.framework in CopyFiles */,
+				6BC9C2A0224C6BF300D473B7 /* vorbisfile.framework in CopyFiles */,
 			);
-			runOnlyForDeploymentPostprocessing = 1;
+			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		6BC9C1C6224C663100D473B7 /* SpectrographCPP */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = SpectrographCPP; sourceTree = BUILT_PRODUCTS_DIR; };
 		6BC9C1D2224C679400D473B7 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		6BC9C1D8224C6B4300D473B7 /* libLibSpectrographCPP.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libLibSpectrographCPP.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		6BC9C1DD224C6B7600D473B7 /* SpectrographGen.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = SpectrographGen.cpp; sourceTree = "<group>"; };
+		6BC9C1DE224C6B7600D473B7 /* SpectrographGen.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = SpectrographGen.hpp; sourceTree = "<group>"; };
+		6BC9C265224C6BB000D473B7 /* ogg.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ogg.framework; path = extlibs/Frameworks/ogg.framework; sourceTree = "<group>"; };
+		6BC9C266224C6BB000D473B7 /* sfml-system.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "sfml-system.framework"; path = "extlibs/Frameworks/sfml-system.framework"; sourceTree = "<group>"; };
+		6BC9C267224C6BB000D473B7 /* freetype.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = freetype.framework; path = extlibs/Frameworks/freetype.framework; sourceTree = "<group>"; };
+		6BC9C268224C6BB000D473B7 /* vorbis.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = vorbis.framework; path = extlibs/Frameworks/vorbis.framework; sourceTree = "<group>"; };
+		6BC9C269224C6BB000D473B7 /* FLAC.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FLAC.framework; path = extlibs/Frameworks/FLAC.framework; sourceTree = "<group>"; };
+		6BC9C26A224C6BB000D473B7 /* sfml-audio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "sfml-audio.framework"; path = "extlibs/Frameworks/sfml-audio.framework"; sourceTree = "<group>"; };
+		6BC9C26B224C6BB000D473B7 /* sfml-network.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "sfml-network.framework"; path = "extlibs/Frameworks/sfml-network.framework"; sourceTree = "<group>"; };
+		6BC9C26C224C6BB000D473B7 /* vorbisfile.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = vorbisfile.framework; path = extlibs/Frameworks/vorbisfile.framework; sourceTree = "<group>"; };
+		6BC9C26D224C6BB000D473B7 /* OpenAL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenAL.framework; path = extlibs/Frameworks/OpenAL.framework; sourceTree = "<group>"; };
+		6BC9C26E224C6BB000D473B7 /* vorbisenc.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = vorbisenc.framework; path = extlibs/Frameworks/vorbisenc.framework; sourceTree = "<group>"; };
+		6BC9C26F224C6BB000D473B7 /* sfml-window.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "sfml-window.framework"; path = "extlibs/Frameworks/sfml-window.framework"; sourceTree = "<group>"; };
+		6BC9C270224C6BB000D473B7 /* sfml-graphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "sfml-graphics.framework"; path = "extlibs/Frameworks/sfml-graphics.framework"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -32,6 +99,35 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6BC9C1E4224C6B8B00D473B7 /* libLibSpectrographCPP.a in Frameworks */,
+				6BC9C27D224C6BB400D473B7 /* FLAC.framework in Frameworks */,
+				6BC9C27E224C6BB400D473B7 /* freetype.framework in Frameworks */,
+				6BC9C27F224C6BB400D473B7 /* ogg.framework in Frameworks */,
+				6BC9C280224C6BB400D473B7 /* OpenAL.framework in Frameworks */,
+				6BC9C281224C6BB400D473B7 /* sfml-audio.framework in Frameworks */,
+				6BC9C284224C6BB400D473B7 /* sfml-system.framework in Frameworks */,
+				6BC9C286224C6BB400D473B7 /* vorbis.framework in Frameworks */,
+				6BC9C287224C6BB400D473B7 /* vorbisenc.framework in Frameworks */,
+				6BC9C288224C6BB400D473B7 /* vorbisfile.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6BC9C1D6224C6B4300D473B7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6BC9C27A224C6BB000D473B7 /* vorbisenc.framework in Frameworks */,
+				6BC9C273224C6BB000D473B7 /* freetype.framework in Frameworks */,
+				6BC9C274224C6BB000D473B7 /* vorbis.framework in Frameworks */,
+				6BC9C275224C6BB000D473B7 /* FLAC.framework in Frameworks */,
+				6BC9C276224C6BB000D473B7 /* sfml-audio.framework in Frameworks */,
+				6BC9C271224C6BB000D473B7 /* ogg.framework in Frameworks */,
+				6BC9C278224C6BB000D473B7 /* vorbisfile.framework in Frameworks */,
+				6BC9C279224C6BB000D473B7 /* OpenAL.framework in Frameworks */,
+				6BC9C272224C6BB000D473B7 /* sfml-system.framework in Frameworks */,
+				6BC9C27B224C6BB000D473B7 /* sfml-window.framework in Frameworks */,
+				6BC9C277224C6BB000D473B7 /* sfml-network.framework in Frameworks */,
+				6BC9C27C224C6BB000D473B7 /* sfml-graphics.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -41,8 +137,10 @@
 		6BC9C1BD224C663100D473B7 = {
 			isa = PBXGroup;
 			children = (
+				6BC9C1DC224C6B5D00D473B7 /* LibSpectrographCPP */,
 				6BC9C1C7224C663100D473B7 /* Products */,
-				6BC9C1D1224C679400D473B7 /* Source */,
+				6BC9C1D1224C679400D473B7 /* SpectrographCPP */,
+				6BC9C1E3224C6B8B00D473B7 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -50,19 +148,59 @@
 			isa = PBXGroup;
 			children = (
 				6BC9C1C6224C663100D473B7 /* SpectrographCPP */,
+				6BC9C1D8224C6B4300D473B7 /* libLibSpectrographCPP.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		6BC9C1D1224C679400D473B7 /* Source */ = {
+		6BC9C1D1224C679400D473B7 /* SpectrographCPP */ = {
 			isa = PBXGroup;
 			children = (
 				6BC9C1D2224C679400D473B7 /* main.cpp */,
 			);
-			path = Source;
+			path = SpectrographCPP;
+			sourceTree = "<group>";
+		};
+		6BC9C1DC224C6B5D00D473B7 /* LibSpectrographCPP */ = {
+			isa = PBXGroup;
+			children = (
+				6BC9C1DD224C6B7600D473B7 /* SpectrographGen.cpp */,
+				6BC9C1DE224C6B7600D473B7 /* SpectrographGen.hpp */,
+			);
+			path = LibSpectrographCPP;
+			sourceTree = "<group>";
+		};
+		6BC9C1E3224C6B8B00D473B7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6BC9C269224C6BB000D473B7 /* FLAC.framework */,
+				6BC9C267224C6BB000D473B7 /* freetype.framework */,
+				6BC9C265224C6BB000D473B7 /* ogg.framework */,
+				6BC9C26D224C6BB000D473B7 /* OpenAL.framework */,
+				6BC9C26A224C6BB000D473B7 /* sfml-audio.framework */,
+				6BC9C270224C6BB000D473B7 /* sfml-graphics.framework */,
+				6BC9C26B224C6BB000D473B7 /* sfml-network.framework */,
+				6BC9C266224C6BB000D473B7 /* sfml-system.framework */,
+				6BC9C26F224C6BB000D473B7 /* sfml-window.framework */,
+				6BC9C268224C6BB000D473B7 /* vorbis.framework */,
+				6BC9C26E224C6BB000D473B7 /* vorbisenc.framework */,
+				6BC9C26C224C6BB000D473B7 /* vorbisfile.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		6BC9C1D4224C6B4300D473B7 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6BC9C1E0224C6B7600D473B7 /* SpectrographGen.hpp in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
 		6BC9C1C5224C663100D473B7 /* SpectrographCPP */ = {
@@ -76,11 +214,29 @@
 			buildRules = (
 			);
 			dependencies = (
+				6BC9C1E2224C6B8200D473B7 /* PBXTargetDependency */,
 			);
 			name = SpectrographCPP;
 			productName = SpectrographCPP;
 			productReference = 6BC9C1C6224C663100D473B7 /* SpectrographCPP */;
 			productType = "com.apple.product-type.tool";
+		};
+		6BC9C1D7224C6B4300D473B7 /* LibSpectrographCPP */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6BC9C1D9224C6B4300D473B7 /* Build configuration list for PBXNativeTarget "LibSpectrographCPP" */;
+			buildPhases = (
+				6BC9C1D4224C6B4300D473B7 /* Headers */,
+				6BC9C1D5224C6B4300D473B7 /* Sources */,
+				6BC9C1D6224C6B4300D473B7 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = LibSpectrographCPP;
+			productName = LibSpectrographCPP;
+			productReference = 6BC9C1D8224C6B4300D473B7 /* libLibSpectrographCPP.a */;
+			productType = "com.apple.product-type.library.static";
 		};
 /* End PBXNativeTarget section */
 
@@ -92,6 +248,9 @@
 				ORGANIZATIONNAME = "WimMa Games";
 				TargetAttributes = {
 					6BC9C1C5224C663100D473B7 = {
+						CreatedOnToolsVersion = 10.1;
+					};
+					6BC9C1D7224C6B4300D473B7 = {
 						CreatedOnToolsVersion = 10.1;
 					};
 				};
@@ -109,6 +268,7 @@
 			projectRoot = "";
 			targets = (
 				6BC9C1C5224C663100D473B7 /* SpectrographCPP */,
+				6BC9C1D7224C6B4300D473B7 /* LibSpectrographCPP */,
 			);
 		};
 /* End PBXProject section */
@@ -122,7 +282,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		6BC9C1D5224C6B4300D473B7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6BC9C1DF224C6B7600D473B7 /* SpectrographGen.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		6BC9C1E2224C6B8200D473B7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6BC9C1D7224C6B4300D473B7 /* LibSpectrographCPP */;
+			targetProxy = 6BC9C1E1224C6B8200D473B7 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		6BC9C1CB224C663100D473B7 /* Debug */ = {
@@ -162,10 +338,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					/Libraries/Frameworks,
-					extlibs/Frameworks,
-				);
+				FRAMEWORK_SEARCH_PATHS = extlibs/Frameworks;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -230,10 +403,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					/Libraries/Frameworks,
-					extlibs/Frameworks,
-				);
+				FRAMEWORK_SEARCH_PATHS = extlibs/Frameworks;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -257,18 +427,70 @@
 		6BC9C1CE224C663100D473B7 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4TNV5A6NF4;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/extlibs/Frameworks",
+				);
+				HEADER_SEARCH_PATHS = (
+					/usr/local/include,
+					extlibs/Include,
+					LibSpectrographCPP,
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
 			name = Debug;
 		};
 		6BC9C1CF224C663100D473B7 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4TNV5A6NF4;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/extlibs/Frameworks",
+				);
+				HEADER_SEARCH_PATHS = (
+					/usr/local/include,
+					extlibs/Include,
+					LibSpectrographCPP,
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+			};
+			name = Release;
+		};
+		6BC9C1DA224C6B4300D473B7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4TNV5A6NF4;
+				EXECUTABLE_PREFIX = lib;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/extlibs/Frameworks",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		6BC9C1DB224C6B4300D473B7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4TNV5A6NF4;
+				EXECUTABLE_PREFIX = lib;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/extlibs/Frameworks",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
 			};
 			name = Release;
 		};
@@ -289,6 +511,15 @@
 			buildConfigurations = (
 				6BC9C1CE224C663100D473B7 /* Debug */,
 				6BC9C1CF224C663100D473B7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6BC9C1D9224C6B4300D473B7 /* Build configuration list for PBXNativeTarget "LibSpectrographCPP" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6BC9C1DA224C6B4300D473B7 /* Debug */,
+				6BC9C1DB224C6B4300D473B7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
