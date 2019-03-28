@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6B5F80D5224C72DA00902BBF /* Sine.wav in CopyFiles */ = {isa = PBXBuildFile; fileRef = 6B5F80D2224C72C900902BBF /* Sine.wav */; };
+		6B5F80D6224C72DA00902BBF /* Midievil Dreams.mp3 in CopyFiles */ = {isa = PBXBuildFile; fileRef = 6B5F80D3224C72C900902BBF /* Midievil Dreams.mp3 */; };
+		6B5F80D7224C72DA00902BBF /* Come Alive.ogg in CopyFiles */ = {isa = PBXBuildFile; fileRef = 6B5F80D4224C72C900902BBF /* Come Alive.ogg */; };
+		6B5F80D8224C730A00902BBF /* sfml-graphics.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 6BC9C270224C6BB000D473B7 /* sfml-graphics.framework */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		6B5F80D9224C730A00902BBF /* sfml-window.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 6BC9C26F224C6BB000D473B7 /* sfml-window.framework */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		6B5F80DA224C730F00902BBF /* sfml-graphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BC9C270224C6BB000D473B7 /* sfml-graphics.framework */; };
+		6B5F80DB224C730F00902BBF /* sfml-window.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BC9C26F224C6BB000D473B7 /* sfml-window.framework */; };
+		6B5F80DE224C93F700902BBF /* Midievil Dreams.ogg in CopyFiles */ = {isa = PBXBuildFile; fileRef = 6B5F80DD224C93F000902BBF /* Midievil Dreams.ogg */; };
 		6BC9C1D3224C679B00D473B7 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6BC9C1D2224C679400D473B7 /* main.cpp */; };
 		6BC9C1DF224C6B7600D473B7 /* SpectrographGen.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6BC9C1DD224C6B7600D473B7 /* SpectrographGen.cpp */; };
 		6BC9C1E0224C6B7600D473B7 /* SpectrographGen.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 6BC9C1DE224C6B7600D473B7 /* SpectrographGen.hpp */; };
@@ -54,6 +62,19 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		6B5F80D0224C72BB00902BBF /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 7;
+			files = (
+				6B5F80D5224C72DA00902BBF /* Sine.wav in CopyFiles */,
+				6B5F80D6224C72DA00902BBF /* Midievil Dreams.mp3 in CopyFiles */,
+				6B5F80DE224C93F700902BBF /* Midievil Dreams.ogg in CopyFiles */,
+				6B5F80D7224C72DA00902BBF /* Come Alive.ogg in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		6BC9C1C4224C663100D473B7 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 12;
@@ -69,12 +90,18 @@
 				6BC9C29E224C6BF300D473B7 /* vorbis.framework in CopyFiles */,
 				6BC9C29F224C6BF300D473B7 /* vorbisenc.framework in CopyFiles */,
 				6BC9C2A0224C6BF300D473B7 /* vorbisfile.framework in CopyFiles */,
+				6B5F80D8224C730A00902BBF /* sfml-graphics.framework in CopyFiles */,
+				6B5F80D9224C730A00902BBF /* sfml-window.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		6B5F80D2224C72C900902BBF /* Sine.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Sine.wav; sourceTree = "<group>"; };
+		6B5F80D3224C72C900902BBF /* Midievil Dreams.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Midievil Dreams.mp3"; sourceTree = "<group>"; };
+		6B5F80D4224C72C900902BBF /* Come Alive.ogg */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Come Alive.ogg"; sourceTree = "<group>"; };
+		6B5F80DD224C93F000902BBF /* Midievil Dreams.ogg */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Midievil Dreams.ogg"; sourceTree = "<group>"; };
 		6BC9C1C6224C663100D473B7 /* SpectrographCPP */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = SpectrographCPP; sourceTree = BUILT_PRODUCTS_DIR; };
 		6BC9C1D2224C679400D473B7 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		6BC9C1D8224C6B4300D473B7 /* libLibSpectrographCPP.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libLibSpectrographCPP.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -99,6 +126,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6B5F80DA224C730F00902BBF /* sfml-graphics.framework in Frameworks */,
+				6B5F80DB224C730F00902BBF /* sfml-window.framework in Frameworks */,
 				6BC9C1E4224C6B8B00D473B7 /* libLibSpectrographCPP.a in Frameworks */,
 				6BC9C27D224C6BB400D473B7 /* FLAC.framework in Frameworks */,
 				6BC9C27E224C6BB400D473B7 /* freetype.framework in Frameworks */,
@@ -134,9 +163,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6B5F80D1224C72C900902BBF /* Examples */ = {
+			isa = PBXGroup;
+			children = (
+				6B5F80D2224C72C900902BBF /* Sine.wav */,
+				6B5F80D3224C72C900902BBF /* Midievil Dreams.mp3 */,
+				6B5F80D4224C72C900902BBF /* Come Alive.ogg */,
+				6B5F80DD224C93F000902BBF /* Midievil Dreams.ogg */,
+			);
+			path = Examples;
+			sourceTree = "<group>";
+		};
 		6BC9C1BD224C663100D473B7 = {
 			isa = PBXGroup;
 			children = (
+				6B5F80D1224C72C900902BBF /* Examples */,
 				6BC9C1DC224C6B5D00D473B7 /* LibSpectrographCPP */,
 				6BC9C1C7224C663100D473B7 /* Products */,
 				6BC9C1D1224C679400D473B7 /* SpectrographCPP */,
@@ -210,6 +251,7 @@
 				6BC9C1C2224C663100D473B7 /* Sources */,
 				6BC9C1C3224C663100D473B7 /* Frameworks */,
 				6BC9C1C4224C663100D473B7 /* CopyFiles */,
+				6B5F80D0224C72BB00902BBF /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -314,11 +356,11 @@
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_COMMA = NO;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = NO;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
@@ -379,11 +421,11 @@
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_COMMA = NO;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = NO;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;

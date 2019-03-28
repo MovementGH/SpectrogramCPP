@@ -12,6 +12,13 @@
 
 int main(int argc, const char * argv[]) {
     // insert code here...
-    std::cout << "Hello, World!\n";
+    sf::Clock Timer;
+//    SpectrographGen Generator(200,4096);
+//    Generator.loadFromFile("come alive.ogg");
+//    Generator.saveToFile("/users/mayo/desktop/test.png");
+    SpectrographDecode Decoder(200,44100,2);
+    Decoder.loadFromFile("/users/mayo/desktop/test.png");
+    Decoder.saveToFile("/users/mayo/desktop/test.ogg");
+    std::cout<<Timer.getElapsedTime().asSeconds();
     return 0;
 }
