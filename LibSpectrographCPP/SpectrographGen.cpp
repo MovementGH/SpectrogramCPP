@@ -11,7 +11,7 @@
 
 sf::Image SpectrographGen::generateSpectogram() {
     sf::Image Result;
-    Result.create(m_SpecSampleRate*(m_Samples.size()/m_SampleRate),m_SpecResPerSample/2);
+    Result.create(m_SpecSampleRate*(m_Samples.size()/m_SampleRate),m_SpecResPerSample/16);
     std::vector<std::complex<float>> WorkingSamples(m_SpecResPerSample);
     float m=WorkingSamples.size()/(2*pow(WorkingSamples.size()/2,.2));
     for(int i=0;i<Result.getSize().x;i++) {
@@ -19,16 +19,10 @@ sf::Image SpectrographGen::generateSpectogram() {
         for(std::size_t i2=start;i2<start+m_SpecResPerSample;i2++)
             WorkingSamples[i2-start]=std::complex<float>(m_Samples[i2]*m_Hanning[i2-start],0);
         fft(WorkingSamples.data(),(int)WorkingSamples.size(),m_FFTSize);
-        int absres=0,absres1=0,absres2=0;
-        for(int i2=0;i2<WorkingSamples.size()/2;i2++)
-//            absres=abs(WorkingSamples[(pow(i2,.1)*m)+WorkingSamples.size()/2])/10000,
-//                        absres=abs(WorkingSamples[(pow(i2,.2)*m)+WorkingSamples.size()/2])/50000,
-//                        absres1=WorkingSamples[(pow(i2,.2)*m)+WorkingSamples.size()/2].real()/100000,
-//                        absres2=WorkingSamples[(pow(i2,.2)*m)+WorkingSamples.size()/2].imag()/100000,
-            absres=abs(WorkingSamples[i2+WorkingSamples.size()/2])/50000,
-            absres1=WorkingSamples[i2+WorkingSamples.size()/2].real()/100000,
-            absres2=WorkingSamples[i2+WorkingSamples.size()/2].imag()/100000,
-            Result.setPixel(i,i2,{(sf::Uint8)absres,(sf::Uint8)(absres1+128),(sf::Uint8)(absres2+128),255});
+        sf::Uint8 res=0;
+        for(int i2=WorkingSamples.size()*.4375;i2<WorkingSamples.size()/2;i2++)
+            res=std::min(std::max(WorkingSamples[i2+WorkingSamples.size()/2].real()/55000+128,0.f),255.f),
+            Result.setPixel(i,i2-WorkingSamples.size()*.4375,{res,res,res,255});
     }
     return Result;
 }
@@ -93,20 +87,15 @@ void SpectrographGen::fft(std::complex<float>* x,int n,int s) {
 sf::SoundBuffer SpectrographDecode::generateBuffer() {
     std::vector<sf::Int16> Samples(((float)m_Image.getSize().x/(float)m_SpecSampleRate)*m_SampleRate);
     std::vector<std::complex<float>> WorkingSamples(m_SpecResPerSample,std::complex<float>(0,0));
-    std::vector<sf::Int16> WorkingSamples2(m_SpecResPerSample);
-    std::vector<sf::Int16> WorkingSamples3(m_SpecResPerSample);
-    float m=WorkingSamples.size()/(2*pow(WorkingSamples.size()/2,.2));
+    std::vector<sf::Int16> WorkingSamples2(m_SpecResPerSample,0);
     for(int x=0;x<m_Image.getSize().x;x++) {
-        for(int i=0;i<WorkingSamples.size()/2;i++)
+        for(int i=0;i<WorkingSamples.size()/16;i++)
             WorkingSamples2[WorkingSamples.size()/2+i]=m_Image.getPixel(x,m_Image.getSize().y-i-1).g-128,
-            WorkingSamples2[WorkingSamples.size()/2-i]=WorkingSamples2[WorkingSamples.size()/2+i],
-            WorkingSamples3[WorkingSamples.size()/2+i]=m_Image.getPixel(x,m_Image.getSize().y-i-1).b-128,
-            WorkingSamples3[WorkingSamples.size()/2-i]=WorkingSamples3[WorkingSamples.size()/2+i];
+            WorkingSamples2[WorkingSamples.size()/2-i]=WorkingSamples2[WorkingSamples.size()/2+i];
         for(int i2=0;i2<WorkingSamples.size();i2++)
-            WorkingSamples[i2].real(WorkingSamples2[i2]*100000),
-            WorkingSamples[i2].imag(WorkingSamples3[i2]*100000);
+            WorkingSamples[i2]={WorkingSamples2[i2]*55000.f,0};
         ifft(WorkingSamples,m_FFTSize);
-        for(int i2=WorkingSamples.size()*.05f;i2<WorkingSamples.size()*.95f;i2++)
+        for(int i2=WorkingSamples.size()*.03f;i2<WorkingSamples.size()*.97f;i2++)
             Samples[x*(m_SampleRate/m_SpecSampleRate)+i2]=(WorkingSamples[i2].real()/500)*m_Hanning[i2];
     }
     sf::SoundBuffer Buffer;
@@ -118,7 +107,7 @@ void SpectrographDecode::saveToFile(std::string File) {
 }
 bool SpectrographDecode::loadFromFile(std::string File) {
     if(m_Image.loadFromFile(File)) {
-        m_SpecResPerSample=m_Image.getSize().y*2;
+        m_SpecResPerSample=m_Image.getSize().y*16;
         m_Temp.resize(m_SpecResPerSample/2);
         m_Hanning.resize(m_SpecResPerSample);
         for(int i(0);i<m_SpecResPerSample;i++)
