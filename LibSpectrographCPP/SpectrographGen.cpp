@@ -13,7 +13,7 @@ sf::Image SpectrographGen::generateSpectogram() {
     sf::Image Result;
     Result.create(m_SpecSampleRate*(m_Samples.size()/m_SampleRate),m_SpecResPerSample/2);
     std::vector<std::complex<float>> WorkingSamples(m_SpecResPerSample);
-    float m=WorkingSamples.size()/(2*pow(WorkingSamples.size()/2,.1));
+    float m=WorkingSamples.size()/(2*pow(WorkingSamples.size()/2,.2));
     for(int i=0;i<Result.getSize().x;i++) {
         std::size_t start=std::min((std::size_t)i*(m_SampleRate/m_SpecSampleRate),m_Samples.size()-m_SpecResPerSample-1);
         for(std::size_t i2=start;i2<start+m_SpecResPerSample;i2++)
@@ -22,6 +22,9 @@ sf::Image SpectrographGen::generateSpectogram() {
         int absres=0,absres1=0,absres2=0;
         for(int i2=0;i2<WorkingSamples.size()/2;i2++)
 //            absres=abs(WorkingSamples[(pow(i2,.1)*m)+WorkingSamples.size()/2])/10000,
+//                        absres=abs(WorkingSamples[(pow(i2,.2)*m)+WorkingSamples.size()/2])/50000,
+//                        absres1=WorkingSamples[(pow(i2,.2)*m)+WorkingSamples.size()/2].real()/100000,
+//                        absres2=WorkingSamples[(pow(i2,.2)*m)+WorkingSamples.size()/2].imag()/100000,
             absres=abs(WorkingSamples[i2+WorkingSamples.size()/2])/50000,
             absres1=WorkingSamples[i2+WorkingSamples.size()/2].real()/100000,
             absres2=WorkingSamples[i2+WorkingSamples.size()/2].imag()/100000,
@@ -88,16 +91,17 @@ void SpectrographGen::fft(std::complex<float>* x,int n,int s) {
 
 
 sf::SoundBuffer SpectrographDecode::generateBuffer() {
-    std::vector<sf::Int16> Samples(((float)m_Image.getSize().x/(float)m_SpecSampleRate)*m_SampleRate*m_ChannelCount);
+    std::vector<sf::Int16> Samples(((float)m_Image.getSize().x/(float)m_SpecSampleRate)*m_SampleRate);
     std::vector<std::complex<float>> WorkingSamples(m_SpecResPerSample,std::complex<float>(0,0));
     std::vector<sf::Int16> WorkingSamples2(m_SpecResPerSample);
     std::vector<sf::Int16> WorkingSamples3(m_SpecResPerSample);
+    float m=WorkingSamples.size()/(2*pow(WorkingSamples.size()/2,.2));
     for(int x=0;x<m_Image.getSize().x;x++) {
         for(int i=0;i<WorkingSamples.size()/2;i++)
-            WorkingSamples2[i+WorkingSamples.size()/2]=m_Image.getPixel(x,i).g-128,
-            WorkingSamples2[WorkingSamples.size()/2-i]=WorkingSamples2[i+WorkingSamples.size()/2],
-            WorkingSamples3[i+WorkingSamples.size()/2]=m_Image.getPixel(x,i).b-128,
-            WorkingSamples3[WorkingSamples.size()/2-i]=WorkingSamples3[i+WorkingSamples.size()/2];
+            WorkingSamples2[WorkingSamples.size()/2+i]=m_Image.getPixel(x,m_Image.getSize().y-i-1).g-128,
+            WorkingSamples2[WorkingSamples.size()/2-i]=WorkingSamples2[WorkingSamples.size()/2+i],
+            WorkingSamples3[WorkingSamples.size()/2+i]=m_Image.getPixel(x,m_Image.getSize().y-i-1).b-128,
+            WorkingSamples3[WorkingSamples.size()/2-i]=WorkingSamples3[WorkingSamples.size()/2+i];
         for(int i2=0;i2<WorkingSamples.size();i2++)
             WorkingSamples[i2].real(WorkingSamples2[i2]*100000),
             WorkingSamples[i2].imag(WorkingSamples3[i2]*100000);

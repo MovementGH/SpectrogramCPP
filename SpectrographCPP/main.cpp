@@ -10,15 +10,17 @@
 #include <SpectrographGen.hpp>
 #include <SFML/Audio.hpp>
 
+#define OUTPUTPATH ""
+
 int main(int argc, const char * argv[]) {
     // insert code here...
     sf::Clock Timer;
-//    SpectrographGen Generator(200,4096);
-//    Generator.loadFromFile("come alive.ogg");
-//    Generator.saveToFile("/users/mayo/desktop/test.png");
+    SpectrographGen Generator(200,4096);
+    Generator.loadFromFile("short.ogg");
+    Generator.saveToFile(OUTPUTPATH+"test.png");
     SpectrographDecode Decoder(200,44100,2);
-    Decoder.loadFromFile("/users/mayo/desktop/test.png");
-    Decoder.saveToFile("/users/mayo/desktop/test.ogg");
+    Decoder.loadFromFile(OUTPUTPATH+"test.png");
+    Decoder.saveToFile(OUTPUTPATH+"test.ogg");
     std::cout<<Timer.getElapsedTime().asSeconds();
     return 0;
 }

@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6B0743B3224D95840010538D /* Short.ogg in CopyFiles */ = {isa = PBXBuildFile; fileRef = 6B0743B2224D957B0010538D /* Short.ogg */; };
 		6B5F80D5224C72DA00902BBF /* Sine.wav in CopyFiles */ = {isa = PBXBuildFile; fileRef = 6B5F80D2224C72C900902BBF /* Sine.wav */; };
-		6B5F80D6224C72DA00902BBF /* Midievil Dreams.mp3 in CopyFiles */ = {isa = PBXBuildFile; fileRef = 6B5F80D3224C72C900902BBF /* Midievil Dreams.mp3 */; };
 		6B5F80D7224C72DA00902BBF /* Come Alive.ogg in CopyFiles */ = {isa = PBXBuildFile; fileRef = 6B5F80D4224C72C900902BBF /* Come Alive.ogg */; };
 		6B5F80D8224C730A00902BBF /* sfml-graphics.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 6BC9C270224C6BB000D473B7 /* sfml-graphics.framework */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		6B5F80D9224C730A00902BBF /* sfml-window.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 6BC9C26F224C6BB000D473B7 /* sfml-window.framework */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -69,8 +69,8 @@
 			dstSubfolderSpec = 7;
 			files = (
 				6B5F80D5224C72DA00902BBF /* Sine.wav in CopyFiles */,
-				6B5F80D6224C72DA00902BBF /* Midievil Dreams.mp3 in CopyFiles */,
 				6B5F80DE224C93F700902BBF /* Midievil Dreams.ogg in CopyFiles */,
+				6B0743B3224D95840010538D /* Short.ogg in CopyFiles */,
 				6B5F80D7224C72DA00902BBF /* Come Alive.ogg in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -98,8 +98,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		6B0743B2224D957B0010538D /* Short.ogg */ = {isa = PBXFileReference; lastKnownFileType = file; path = Short.ogg; sourceTree = "<group>"; };
 		6B5F80D2224C72C900902BBF /* Sine.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Sine.wav; sourceTree = "<group>"; };
-		6B5F80D3224C72C900902BBF /* Midievil Dreams.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Midievil Dreams.mp3"; sourceTree = "<group>"; };
 		6B5F80D4224C72C900902BBF /* Come Alive.ogg */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Come Alive.ogg"; sourceTree = "<group>"; };
 		6B5F80DD224C93F000902BBF /* Midievil Dreams.ogg */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Midievil Dreams.ogg"; sourceTree = "<group>"; };
 		6BC9C1C6224C663100D473B7 /* SpectrographCPP */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = SpectrographCPP; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -167,9 +167,9 @@
 			isa = PBXGroup;
 			children = (
 				6B5F80D2224C72C900902BBF /* Sine.wav */,
-				6B5F80D3224C72C900902BBF /* Midievil Dreams.mp3 */,
 				6B5F80D4224C72C900902BBF /* Come Alive.ogg */,
 				6B5F80DD224C93F000902BBF /* Midievil Dreams.ogg */,
+				6B0743B2224D957B0010538D /* Short.ogg */,
 			);
 			path = Examples;
 			sourceTree = "<group>";
