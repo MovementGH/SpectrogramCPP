@@ -15,10 +15,7 @@
 #include <math.h>
 #include <iostream>
 #include <algorithm>
-#include <cmath>
-#include <cstddef>
-#include <cstdint>
-#include <stdexcept>
+#include <thread>
 
 class SpectrographGen {
 public:
