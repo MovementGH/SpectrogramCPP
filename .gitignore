@@ -34,3 +34,4 @@
 # Derived Xcode files
 
 /DerivedData
+*.xcodeproj
