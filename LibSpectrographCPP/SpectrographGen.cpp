@@ -1,10 +1,3 @@
-//
-//  SpectrographGen.cpp
-//  LibSpectrographCPP
-//
-//  Created by Mayo Furgerson on 3/27/19.
-//  Copyright © 2019 WimMa Games. All rights reserved.
-//
 #include "SpectrographGen.hpp"
 SpectrographGen::SpectrographGen(int SpecSampleRate,int SpecResPerSample,float Compression): m_Samples(),m_SampleRate(0),m_SpecSampleRate(SpecSampleRate),m_Compression(Compression),FFTBase(SpecResPerSample){}
 void SpectrographGen::generateLine(sf::Image* Output,int LineStart,int LineEnd) {
