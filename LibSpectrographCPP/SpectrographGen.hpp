@@ -24,17 +24,16 @@ public:
     void saveToFile(std::string File);
 protected:
     sf::Image generateSpectogram();
-    void sort(std::complex<float>* a,int n);
-    void fft(std::complex<float>* x,int n,int s);
+    void generateLine(sf::Image* Output,int LineStart,int LineEnd);
+    void sort(std::vector<std::complex<float>>& tmp,std::complex<float>* a,int n);
+    void fft(std::vector<std::complex<float>>& tmp,std::complex<float>* x,int n,int s);
     std::vector<sf::Int16> m_Samples;
     sf::Int32 m_SampleRate;
     int m_SpecSampleRate;
     int m_SpecResPerSample;
     float m_Compression;
     int m_FFTSize;
-    std::complex<float> e,t;
     std::vector<float> m_Hanning;
-    std::vector<std::complex<float>> m_Temp;
     std::vector<std::vector<std::complex<float>>> m_Polar;
 };
 
@@ -46,9 +45,10 @@ public:
     void saveToFile(std::string File);
 protected:
     sf::SoundBuffer generateBuffer();
-    void sort(std::complex<float>* a,int n);
-    void ifft(std::vector<std::complex<float>>& x,int s);
-    void fft(std::complex<float>* x,int n,int s);
+    void decodeLine(sf::Int16* Output,int StartLine,int EndLine);
+    void sort(std::vector<std::complex<float>>& tmp,std::complex<float>* a,int n);
+    void fft(std::vector<std::complex<float>>& tmp,std::complex<float>* x,int n,int s);
+    void ifft(std::vector<std::complex<float>>& tmp,std::vector<std::complex<float>>& x,int s);
     sf::Image m_Image;
     sf::Int32 m_SampleRate;
     int m_SpecSampleRate;
@@ -56,9 +56,7 @@ protected:
     int m_ChannelCount;
     float m_Compression;
     int m_FFTSize;
-    std::complex<float> e,t;
     std::vector<float> m_Hanning;
-    std::vector<std::complex<float>> m_Temp;
     std::vector<std::vector<std::complex<float>>> m_Polar;
 };
 #endif
