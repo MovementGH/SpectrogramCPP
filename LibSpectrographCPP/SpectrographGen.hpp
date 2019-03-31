@@ -16,47 +16,48 @@
 #include <iostream>
 #include <algorithm>
 #include <thread>
-class SpectrographGen {
+class FFTBase {
+public:
+    FFTBase(int FFTWidth);
+    void init(int FFTWidth);
+protected:
+    void sort(std::vector<std::complex<float>>& tmp,std::complex<float>* a,int n);
+    void fft(std::vector<std::complex<float>>& tmp,std::complex<float>* x,int n,int s);
+    void ifft(std::vector<std::complex<float>>& tmp,std::vector<std::complex<float>>& x,int s);
+    std::vector<float> m_Hanning;
+    std::vector<std::vector<std::complex<float>>> m_Polar;
+    int m_FFTSize;
+    int m_FFTWidth;
+};
+class SpectrographGen:public FFTBase {
 public:
     SpectrographGen();
     SpectrographGen(int SpecSampleRate,int SpecResPerSample,float Compression);
     bool loadFromFile(std::string File);
+    void loadFromBuffer(sf::SoundBuffer& Buffer);
     void saveToFile(std::string File);
+    sf::Image generateImage();
 protected:
-    sf::Image generateSpectogram();
     void generateLine(sf::Image* Output,int LineStart,int LineEnd);
-    void sort(std::vector<std::complex<float>>& tmp,std::complex<float>* a,int n);
-    void fft(std::vector<std::complex<float>>& tmp,std::complex<float>* x,int n,int s);
     std::vector<sf::Int16> m_Samples;
     sf::Int32 m_SampleRate;
     int m_SpecSampleRate;
-    int m_SpecResPerSample;
     float m_Compression;
-    int m_FFTSize;
-    std::vector<float> m_Hanning;
-    std::vector<std::vector<std::complex<float>>> m_Polar;
 };
-
-class SpectrographDecode {
+class SpectrographDecode:public FFTBase {
 public:
     SpectrographDecode();
     SpectrographDecode(int SpecSampleRate,int SampleRate,int ChannelCount,float Compression);
     bool loadFromFile(std::string File);
+    void loadFromImage(sf::Image& Image);
     void saveToFile(std::string File);
-protected:
     sf::SoundBuffer generateBuffer();
+protected:
     void decodeLine(sf::Int16* Output,int StartLine,int EndLine);
-    void sort(std::vector<std::complex<float>>& tmp,std::complex<float>* a,int n);
-    void fft(std::vector<std::complex<float>>& tmp,std::complex<float>* x,int n,int s);
-    void ifft(std::vector<std::complex<float>>& tmp,std::vector<std::complex<float>>& x,int s);
     sf::Image m_Image;
     sf::Int32 m_SampleRate;
     int m_SpecSampleRate;
-    int m_SpecResPerSample;
     int m_ChannelCount;
     float m_Compression;
-    int m_FFTSize;
-    std::vector<float> m_Hanning;
-    std::vector<std::vector<std::complex<float>>> m_Polar;
 };
 #endif
