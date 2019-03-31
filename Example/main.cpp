@@ -1,7 +1,7 @@
 #include <iostream>
-#include <SpectrographGen.hpp>
 #include <SFML/Audio.hpp>
-#define OUTPUTPATH std::string("/users/mayo/desktop/")
+#include "Spectrogram.hpp"
+#define OUTPUTPATH std::string("")
 int main(int argc, const char * argv[]) {
     sf::Clock Timer;
     SpectrographGen Generator(250,4096,2);

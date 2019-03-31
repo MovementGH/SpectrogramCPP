@@ -1,4 +1,4 @@
-#include "SpectrographGen.hpp"
+#include "Spectrogram.hpp"
 SpectrographGen::SpectrographGen(int SpecSampleRate,int SpecResPerSample,float Compression): m_Samples(),m_SampleRate(0),m_SpecSampleRate(SpecSampleRate),m_Compression(Compression),FFTBase(SpecResPerSample){}
 void SpectrographGen::generateLine(sf::Image* Output,int LineStart,int LineEnd) {
     std::vector<std::complex<float>> Temp(m_FFTWidth/2);
