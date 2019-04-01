@@ -1,2 +1,2 @@
-# SpectrographCPP
-Library for converting between raw audio and spectrographs
+# SpectrogramCPP
+Library for converting between raw audio and spectrograms
