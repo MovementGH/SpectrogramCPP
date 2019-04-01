@@ -13,9 +13,9 @@ public:
     FFTBase(int FFTWidth);
     void init(int FFTWidth);
 protected:
-    void sort(std::vector<std::complex<float>>& tmp,std::complex<float>* a,int n);
-    void fft(std::vector<std::complex<float>>& tmp,std::complex<float>* x,int n,int s);
-    void ifft(std::vector<std::complex<float>>& tmp,std::vector<std::complex<float>>& x,int s);
+    void sort(std::complex<float>* tmp,std::complex<float>* a,int n);
+    void fft(std::complex<float>* tmp,std::complex<float>* x,int n,int s);
+    void ifft(std::complex<float>* tmp,std::vector<std::complex<float>>& x,int s);
     std::vector<float> m_Hanning;
     std::vector<std::vector<std::complex<float>>> m_Polar;
     int m_FFTSize;
@@ -30,7 +30,7 @@ public:
     void saveToFile(std::string File);
     sf::Image generateImage();
 protected:
-    void generateLine(sf::Image* Output,int LineStart,int LineEnd);
+    void generateLine(sf::Uint8* Output,int LineStart,int LineEnd,sf::Vector2i& Size);
     std::vector<sf::Int16> m_Samples;
     sf::Int32 m_SampleRate;
     int m_SpecSampleRate;
